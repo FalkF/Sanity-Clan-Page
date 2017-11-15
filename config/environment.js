@@ -3,7 +3,7 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'sanit',
+    modulePrefix: 'sanity',
     environment,
     rootURL: '/',
     locationType: 'auto',

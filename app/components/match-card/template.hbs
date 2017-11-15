@@ -1,1 +1,43 @@
-{{yield}}
+<div local-class="score-container">
+  <div local-class="title">
+    <span local-class="teamA">
+      {{match.teams.[0].name}}
+      <span local-class="score">{{match.teams.[0].rounds}}</span>
+    </span>
+    <span local-class="vs">VS</span>
+    <span local-class="teamB">
+      <span local-class="score">{{match.teams.[1].rounds}}</span>
+      {{match.teams.[1].name}}
+    </span>
+  </div>
+
+  <div local-class="details">
+    <span local-class="">{{match.type}}</span>
+    <span local-class="">{{match.date}}</span>
+    <span local-class="">Rounds: {{roundsPlayed}}</span>
+  </div>
+  <div local-class="player-table">
+
+  {{#each teams as |team|}}
+    {{#light-table (player-table team) height='15vh' as |t|}}
+      {{t.head}}
+
+      {{#t.body as |body|}}
+        {{#body.expanded-row as |row|}}
+          Hello <b>{{row.firstName}}</b>
+        {{/body.expanded-row}}
+
+        {{#if isLoading}}
+          loading
+        {{/if}}
+
+        {{#if table.isEmpty}}
+          {{#body.no-data}}
+            error loading data
+          {{/body.no-data}}
+        {{/if}}
+      {{/t.body}}
+    {{/light-table}}
+  {{/each}}
+  </div>
+</div>
