@@ -19,7 +19,7 @@
   <div local-class="player-table">
 
   {{#each teams as |team|}}
-    {{#light-table (player-table team) height='15vh' as |t|}}
+    {{#light-table (player-table team.players) height='15vh' as |t|}}
       {{t.head}}
 
       {{#t.body as |body|}}

@@ -1,17 +1,12 @@
 import Component from '@ember/component';
-import { get, set } from '@ember/object';
-import {
-  computed,
-  action
-} from 'ember-decorators/object';
-import Table from 'ember-light-table';
-import { A } from '@ember/array';
+import { get } from '@ember/object';
+import { computed } from 'ember-decorators/object';
 
 export default class extends Component {
   @computed('teams')
   get roundsPlayed() {
     const teams = this.get('teams')
-    
+
     return teams.map(team => team.rounds).reduce((a, b) => a + b)
   }
 

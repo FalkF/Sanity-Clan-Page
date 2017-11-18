@@ -1,9 +1,8 @@
 import { helper } from '@ember/component/helper';
-import { get, set } from '@ember/object';
 import Table from 'ember-light-table';
 
 export function playerTable(params/*, hash*/) {
-  const columns = [{
+  const columns = [{ // TODO move
     label: 'Player',
     valuePath: 'name',
     width: '100px',
@@ -19,16 +18,19 @@ export function playerTable(params/*, hash*/) {
     label: 'Ø',
     valuePath: 'kd',
     width: '70px'
-  }];
+  }]
 
-  var [team] = params;
-  team.players.forEach(player => {
-    let kd = player.kills / player.deaths
-    kd = Number.isInteger(kd) ? kd : kd.toFixed(1)
-    set(player, 'kd', kd)
+  var [players] = params;
+  players.forEach(player => {
+    if (player.deaths === 0 || player.kills === 0) {
+      return player.kd = player.kills
+    }
+
+    const kd = player.kills / player.deaths
+    return player.kd = Number.isInteger(kd) ? kd : kd.toFixed(1)
   })
 
-return new Table(columns, team.players)
+  return new Table(columns, players)
 }
 
 export default helper(playerTable);
