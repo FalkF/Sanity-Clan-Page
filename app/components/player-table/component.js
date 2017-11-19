@@ -17,7 +17,7 @@ export default class extends Component {
     }, {
       label: 'Score',
       valuePath: 'score',
-      width: '80px'
+      width: '60px'
     },{
       label: 'Objectives',
       valuePath: 'objectives',

@@ -8,7 +8,7 @@ export default Factory.extend({
 
   date() { return faker.date.past(2) },
 
-  type() { return faker.random.arrayElement(['pug','training','tournament']) },
+  type() { return faker.random.arrayElement(['PUG','TRAINING','TOURNAMENT']) },
 
   map() { return faker.random.arrayElement(['Market', 'Siege', 'Contact', 'Uprising', 'Ministry', 'District', 'Peak', 'Heights', 'Station', 'Verticality', 'Embassy']) },
 

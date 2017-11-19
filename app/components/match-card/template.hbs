@@ -1,4 +1,5 @@
 <div local-class="score-container">
+
   <div local-class="title">
     <span local-class="teamA">
       {{match.teams.[0].name}}
@@ -12,14 +13,14 @@
   </div>
 
   <div local-class="details">
-    <span local-class="">{{match.type}}</span>
-    <span local-class="">{{match.map}}</span>
-    <span local-class="">{{match.date}}</span>
+    <span local-class="">{{moment-format match.date 'D.M.YYYY MM:HH'}}</span>
     <span local-class="">Rounds: {{roundsPlayed}}</span>
+    <span local-class="">{{match.type}} on {{match.map}}</span>
   </div>
-  <div local-class="player-table">
 
-  {{player-table players=match.teams.[0].players}}
-  {{player-table players=match.teams.[1].players reverse=true}}
+  <div local-class="player-table">
+    {{player-table players=match.teams.[0].players}}
+    {{player-table players=match.teams.[1].players reverse=true}}
   </div>
+
 </div>
