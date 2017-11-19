@@ -5,19 +5,19 @@ export function playerTable(params/*, hash*/) {
   const columns = [{ // TODO move
     label: 'Player',
     valuePath: 'name',
-    width: '100px',
+    width: '120px',
   }, {
     label: 'Kills',
     valuePath: 'kills',
-    width: '70px'
+    width: '80px'
   }, {
     label: 'Deaths',
     valuePath: 'deaths',
-    width: '70px'
+    width: '80px'
   }, {
     label: 'Ø',
     valuePath: 'kd',
-    width: '70px'
+    width: '80px'
   }]
 
   var [players] = params;

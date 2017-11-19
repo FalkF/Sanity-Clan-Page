@@ -3,15 +3,10 @@ import { get } from '@ember/object';
 import { computed } from 'ember-decorators/object';
 
 export default class extends Component {
-  @computed('teams')
-  get roundsPlayed() {
-    const teams = this.get('teams')
 
-    return teams.map(team => team.rounds).reduce((a, b) => a + b)
-  }
-
-  @computed('match') get teams() {
-   const match = this.get('match');
+  @computed('match')
+  get teams() {
+    const match = this.get('match');
 
     let teams = [];
     for(let i = 0; i < match.get('teams').length; i++) {
@@ -19,4 +14,12 @@ export default class extends Component {
     }
     return teams
   }
+
+  @computed('teams')
+  get roundsPlayed() {
+    const teams = this.get('teams')
+
+    return teams.map(team => team.rounds).reduce((a, b) => a + b)
+  }
+
 }

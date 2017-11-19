@@ -1,18 +1,32 @@
 import Route from '@ember/routing/route';
 import { task } from 'ember-concurrency';
-import { reads } from 'ember-decorators/object/computed';
+import { reads, sort } from 'ember-decorators/object/computed';
+//import { sort } from '@ember/object/computed';
 
-export default class extends Route {
-  model() {
-    return this.store.findAll('match');
-    // return this.store.findRecord('match', 1);
+export default class extends  Route {
+
+  //@reads('fetchMatch.last.value') test
+
+  async model() {
+    return this.get('fetchMatch').perform()
   }
-    // @reads('fetchMatch.last.value') model
-    //
-    // fetchMatch = task(function * () {
-    //   let store = this.get('store');
-    //   return yield store.findRecord('match', 1);
-    // })
+
+  fetchMatch = task(function * () {
+    let store = this.get('store')
+
+    let matches = yield store.findAll('match')
+    matches.set('conent', matches.content.sort(function(a, b){
+      if (a._data.date < b._data.date) {
+        return 1;
+      } else if (a._data.date > b._data.date) {
+        return -1;
+      }
+
+      return 0;
+    }))
+
+    return matches
+  })
 
     // model() {
     //   return {
