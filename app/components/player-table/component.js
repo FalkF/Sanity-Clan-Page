@@ -1,4 +1,5 @@
 import Component from '@ember/component';
+import { set } from '@ember/object';
 import { computed } from 'ember-decorators/object';
 import Table from 'ember-light-table';
 import generateKD from "../../utils/generate-kd";
@@ -7,7 +8,7 @@ export default class extends Component {
 
   @computed('players', 'reverse')
   get playerTable() {
-    const players = this.get('players');
+    let players = this.get('players');
     const reverse = this.get('reverse');
     const columns = [{ // TODO move
       label: 'Player',
@@ -36,10 +37,13 @@ export default class extends Component {
     }]
 
     players.forEach(player => { //
-      player.kd = generateKD(player.kills, player.deaths)
+      set(player, 'kd', generateKD(player.kills, player.deaths))
     })
 
-    return new Table(reverse ? columns.reverse() : columns, players)
+    return new Table(
+      reverse ? columns.reverse() : columns,
+      players.sort((a,b) => b.score-a.score)
+    )
   }
 
 }

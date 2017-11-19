@@ -6,9 +6,7 @@ export default Model.extend({
 
     type: attr('string'),
 
-    a: attr('string'),
-
-    b: attr('string'),
+    map: attr('string'),
 
     teams: attr()
 

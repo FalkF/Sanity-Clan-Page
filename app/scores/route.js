@@ -1,6 +1,6 @@
 import Route from '@ember/routing/route';
 import { task } from 'ember-concurrency';
-import { reads, sort } from 'ember-decorators/object/computed';
+//import { reads, sort } from 'ember-decorators/object/computed';
 //import { sort } from '@ember/object/computed';
 
 export default class extends Route {
@@ -12,9 +12,7 @@ export default class extends Route {
   }
 
   fetchMatch = task(function * () {
-    let store = this.get('store')
-
-    let matches = yield store.findAll('match')
+    let matches = yield this.get('store').findAll('match')
     matches.set('conent', matches.content.sort(function(a, b){
       if (a._data.date < b._data.date) {
         return 1;
@@ -26,7 +24,7 @@ export default class extends Route {
     }))
 
     return matches
-  })
+  }).drop()
 
     // model() {
     //   return {

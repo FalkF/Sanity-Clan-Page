@@ -6,9 +6,11 @@ export default Factory.extend({
     return i;//`Person ${i}`;
   },
 
-  date() { return faker.date.past(1) },
+  date() { return faker.date.past(2) },
 
   type() { return faker.random.arrayElement(['pug','training','tournament']) },
+
+  map() { return faker.random.arrayElement(['Market', 'Siege', 'Contact', 'Uprising', 'Ministry', 'District', 'Peak', 'Heights', 'Station', 'Verticality', 'Embassy']) },
 
   teams() { return [{
       name: faker.hacker.noun(),

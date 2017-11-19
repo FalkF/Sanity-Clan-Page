@@ -13,11 +13,11 @@
 
   <div local-class="details">
     <span local-class="">{{match.type}}</span>
+    <span local-class="">{{match.map}}</span>
     <span local-class="">{{match.date}}</span>
     <span local-class="">Rounds: {{roundsPlayed}}</span>
   </div>
   <div local-class="player-table">
-
 
   {{player-table players=match.teams.[0].players}}
   {{player-table players=match.teams.[1].players reverse=true}}
