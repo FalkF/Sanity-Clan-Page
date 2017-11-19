@@ -1,7 +1,9 @@
 import { helper } from '@ember/component/helper';
 import Table from 'ember-light-table';
+import generateKD from "../utils/generate-kd";
 
 export function playerTable(params/*, hash*/) {
+  let [players, flip] = params;
   const columns = [{ // TODO move
     label: 'Player',
     valuePath: 'name',
@@ -28,17 +30,11 @@ export function playerTable(params/*, hash*/) {
     width: '50px'
   }]
 
-  var [players] = params;
-  players.forEach(player => {
-    if (player.deaths === 0 || player.kills === 0) {
-      return player.kd = player.kills
-    }
-
-    const kd = player.kills / player.deaths
-    return player.kd = Number.isInteger(kd) ? kd : kd.toFixed(1)
+  players.forEach(player => { //
+    player.kd = generateKD(player.kills, player.deaths)
   })
 
-  return new Table(columns, players)
+  return new Table(flip ? columns.reverse() : columns, players)
 }
 
 export default helper(playerTable);
