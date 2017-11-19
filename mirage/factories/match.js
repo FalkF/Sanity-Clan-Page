@@ -15,22 +15,32 @@ export default Factory.extend({
       rounds: faker.random.number( {min:5, max:11} ),
       players: [{
         name: faker.name.firstName(),
+        score: faker.random.number(2000),
+        objectives: faker.random.number(5),
         kills: faker.random.number(15),
         deaths: faker.random.number(10),
       },{
         name: faker.name.firstName(),
+        score: faker.random.number(2000),
+        objectives: faker.random.number(5),
         kills: faker.random.number(15),
         deaths: faker.random.number(10),
       },{
         name: faker.name.firstName(),
+        score: faker.random.number(2000),
+        objectives: faker.random.number(5),
         kills: faker.random.number(15),
         deaths: faker.random.number(10),
       },{
         name: faker.name.firstName(),
+        score: faker.random.number(2000),
+        objectives: faker.random.number(5),
         kills: faker.random.number(15),
         deaths: faker.random.number(10),
       },{
         name: faker.name.firstName(),
+        score: faker.random.number(2000),
+        objectives: faker.random.number(5),
         kills: faker.random.number(15),
         deaths: faker.random.number(10),
       }]
@@ -39,22 +49,32 @@ export default Factory.extend({
       rounds: faker.random.number({ min:1, max:11 } ),
       players: [{
         name: faker.name.firstName(),
+        score: faker.random.number(2000),
+        objectives: faker.random.number(5),
         kills: faker.random.number(15),
         deaths: faker.random.number(10),
       },{
         name: faker.name.firstName(),
+        score: faker.random.number(2000),
+        objectives: faker.random.number(5),
         kills: faker.random.number(15),
         deaths: faker.random.number(10),
       },{
         name: faker.name.firstName(),
+        score: faker.random.number(2000),
+        objectives: faker.random.number(5),
         kills: faker.random.number(15),
         deaths: faker.random.number(10),
       },{
         name: faker.name.firstName(),
+        score: faker.random.number(2000),
+        objectives: faker.random.number(5),
         kills: faker.random.number(15),
         deaths: faker.random.number(10),
       },{
         name: faker.name.firstName(),
+        score: faker.random.number(2000),
+        objectives: faker.random.number(5),
         kills: faker.random.number(15),
         deaths: faker.random.number(10),
       }]

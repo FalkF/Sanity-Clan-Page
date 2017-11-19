@@ -7,17 +7,25 @@ export function playerTable(params/*, hash*/) {
     valuePath: 'name',
     width: '120px',
   }, {
-    label: 'Kills',
+    label: 'Score',
+    valuePath: 'score',
+    width: '80px'
+  },{
+    label: 'Objectives',
+    valuePath: 'objectives',
+    width: '100px'
+  },{
+    label: 'K',
     valuePath: 'kills',
-    width: '80px'
+    width: '40px'
   }, {
-    label: 'Deaths',
+    label: 'D',
     valuePath: 'deaths',
-    width: '80px'
+    width: '40px'
   }, {
     label: 'Ø',
     valuePath: 'kd',
-    width: '80px'
+    width: '50px'
   }]
 
   var [players] = params;
