@@ -12,6 +12,7 @@ export default class extends Component {
     for(let i = 0; i < match.get('teams').length; i++) {
       teams.push(match.get('teams')[i]);
     }
+
     return teams
   }
 

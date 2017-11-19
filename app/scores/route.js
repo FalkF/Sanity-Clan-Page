@@ -3,9 +3,9 @@ import { task } from 'ember-concurrency';
 import { reads, sort } from 'ember-decorators/object/computed';
 //import { sort } from '@ember/object/computed';
 
-export default class extends  Route {
+export default class extends Route {
 
-  //@reads('fetchMatch.last.value') test
+  // @reads('fetchMatch.last.value') test
 
   async model() {
     return this.get('fetchMatch').perform()

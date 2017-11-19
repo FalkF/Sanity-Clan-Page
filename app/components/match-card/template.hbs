@@ -18,26 +18,8 @@
   </div>
   <div local-class="player-table">
 
-  {{#each teams as |team|}}
-    {{#light-table (player-table team.players) height='15vh' as |t|}}
-      {{t.head}}
 
-      {{#t.body as |body|}}
-        {{#body.expanded-row as |row|}}
-          Hello <b>{{row.firstName}}</b>
-        {{/body.expanded-row}}
-
-        {{#if isLoading}}
-          loading
-        {{/if}}
-
-        {{#if table.isEmpty}}
-          {{#body.no-data}}
-            error loading data
-          {{/body.no-data}}
-        {{/if}}
-      {{/t.body}}
-    {{/light-table}}
-  {{/each}}
+  {{player-table players=match.teams.[0].players}}
+  {{player-table players=match.teams.[1].players reverse=true}}
   </div>
 </div>
