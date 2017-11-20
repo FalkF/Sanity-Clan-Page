@@ -4,13 +4,18 @@
   overflow: hidden;
   min-width: 600px;
   background-color: #e0e0e0;
+
+  display: flex;
+  flex-direction: column;
 }
 
-.title {
-  text-align: center;
+.title-container {
   padding: .2em .4em .2em .4em;
   font-size: 2em;
   background-color: #677d7d;
+
+  display: flex;
+  align-items: center;
 }
 .teamA {
   color: #63a4ff;
@@ -22,15 +27,40 @@
   font-size: .7em;
 }
 .vs {
+  margin-top: .8em;
   font-size: .5em;
-  margin-left: -.5em;
-  margin-right: -.5em;
   color: white;
 }
 
+.box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  flex: 1;
+}
+
+.box:first-child > span {
+  margin-left: auto;
+}
+
+.box:last-child  > span {
+  margin-right: auto;
+}
+
+
+
 .details {
-  text-align: center;
   font-size: .9em;
+  text-align: center;
+}
+.details-date {
+  float: left;
+}
+.details-rounds {
+}
+.details-what {
+  float: right;
 }
 
 .player-table {
