@@ -1,10 +1,16 @@
 <div local-class="table">
-  {{#light-table playerTable height='15vh' as |t|}}
+  {{#unless reverse}}
+    {{fa-icon "arrow-down"}}
+  {{/unless}}
+  {{#light-table playerTable as |t|}}
     {{t.head}}
 
-    {{#t.body as |body|}}
+    {{#t.body
+      canExpand = true
+      multiRowExpansion = true
+      autoHideScrollbar = true as |body|  }}
       {{#body.expanded-row as |row|}}
-        Hello <b>{{row.firstName}}</b>
+        "ROUNDS"
       {{/body.expanded-row}}
 
       {{#if isLoading}}
@@ -18,4 +24,7 @@
       {{/if}}
     {{/t.body}}
   {{/light-table}}
+  {{#if reverse}}
+    {{fa-icon "arrow-down"}}
+  {{/if}}
 </div>

@@ -12,15 +12,10 @@ export default class extends Route {
 
   fetchMatch = task(function * () {
     let matches = yield this.get('store').findAll('match')
-    matches.set('conent', matches.content.sort(function(a, b){
-      if (a._data.date < b._data.date) {
-        return 1;
-      } else if (a._data.date > b._data.date) {
-        return -1;
-      }
-
-      return 0;
-    }))
+    matches.set(
+      'conent', 
+      matches.content.sort( (a, b) => b._data.date - a._data.date )
+    )
 
     return matches
   }).drop()

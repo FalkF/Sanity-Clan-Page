@@ -1,16 +1,16 @@
 .score-container {
-  border-radius: 2px;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  border-radius: 3px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   overflow: hidden;
-  min-width: 600px;
-  background-color: #e0e0e0;
+  min-width: 1000px;
+  background-color: #424242;
 
   display: flex;
   flex-direction: column;
 }
 
 .title-container {
-  padding: .2em .4em .2em .4em;
+  padding: 0.2em 0.4em 0.2em 0.4em;
   font-size: 2em;
   background-color: #677d7d;
 
@@ -24,11 +24,12 @@
   color: #ff6659;
 }
 .score {
-  font-size: .7em;
+  font-size: 0.7em;
 }
 .vs {
-  margin-top: .8em;
-  font-size: .5em;
+  flex-shrink: 1;
+  margin-top: 0.8em;
+  font-size: 0.5em;
   color: white;
 }
 
@@ -44,15 +45,15 @@
   margin-left: auto;
 }
 
-.box:last-child  > span {
+.box:last-child > span {
   margin-right: auto;
 }
 
-
-
 .details {
-  font-size: .9em;
+  font-size: 0.9em;
   text-align: center;
+  color: white;
+  margin: 0.2em 1.1em;
 }
 .details-date {
   float: left;
@@ -67,4 +68,10 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  justify-content: center;
+  margin: 1em;
+}
+
+.tableSpacer {
+  width: 1em;
 }
