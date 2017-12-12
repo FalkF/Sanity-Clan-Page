@@ -1,33 +1,26 @@
 <div local-class="score-container">
 
-  <div local-class="title-container">
-    <div local-class="box">
-      <span local-class="teamA">
-        {{match.teams.[0].name}}
+  <div local-class="title">
+    <div local-class="team teamA">
+        <span local-class="name">{{match.teams.[0].name}}</span>
         <span local-class="score">{{match.teams.[0].rounds}}</span>
-      </span>
     </div>
-    <div local-class="box">
-      <span local-class="vs">VS</span>
-    </div>
-    <div local-class="box">
-      <span local-class="teamB">
+    <span local-class="vs">VS</span>
+    <div local-class="team teamB">
         <span local-class="score">{{match.teams.[1].rounds}}</span>
-        {{match.teams.[1].name}}
-      </span>
+        <span local-class="name">{{match.teams.[1].name}}</span>
     </div>
   </div>
 
   <div local-class="details">
-      <span local-class="details-date">{{moment-format match.date 'DD.MM.YYYY MM:HH'}}</span>
-      <span local-class="details-rounds">Rounds: {{roundsPlayed}}</span>
-      <span local-class="details-what">{{match.type}} on {{match.map}}</span>
+      <span local-class="date">{{moment-format match.date 'DD.MM.YYYY MM:HH'}}</span>
+      <span local-class="rounds">Rounds: {{roundsPlayed}}</span>
+      <span local-class="type">{{match.type}} on {{match.map}}</span>
   </div>
 
   <div local-class="player-table">
     {{player-table players=match.teams.[0].players}}
-    <div local-class="tableSpacer"></div>
-    {{player-table players=match.teams.[1].players reverse=true}}
+    {{player-table players=match.teams.[1].players}}
   </div>
 
 </div>

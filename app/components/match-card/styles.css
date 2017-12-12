@@ -1,4 +1,5 @@
 .score-container {
+  border: 2px solid rgba(109, 109, 109, 0.5);
   border-radius: 3px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   overflow: hidden;
@@ -9,44 +10,48 @@
   flex-direction: column;
 }
 
-.title-container {
+.title {
   padding: 0.2em 0.4em 0.2em 0.4em;
   font-size: 2em;
   background-color: #677d7d;
 
   display: flex;
+  justify-content: center;
   align-items: center;
+  flex-wrap: nowrap;
+}
+.team {
+  flex: 1 1 0;
+
+  display: flex;
+  align-items: baseline;
+  overflow: hidden;
 }
 .teamA {
   color: #63a4ff;
+  text-align: right;
 }
 .teamB {
   color: #ff6659;
 }
+.name {
+  letter-spacing: 0.1em;
+  flex: 1 1 0;
+  /*font-size: 2em;*/
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .score {
-  font-size: 0.7em;
+  font-size: 0.9em;
+  margin: 0 1em;
+
+  flex: 0 0 auto;
 }
 .vs {
-  flex-shrink: 1;
-  margin-top: 0.8em;
+  padding-top: 1em;
   font-size: 0.5em;
   color: white;
-}
-
-.box {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  flex: 1;
-}
-
-.box:first-child > span {
-  margin-left: auto;
-}
-
-.box:last-child > span {
-  margin-right: auto;
 }
 
 .details {
@@ -54,24 +59,34 @@
   text-align: center;
   color: white;
   margin: 0.2em 1.1em;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
 }
-.details-date {
-  float: left;
+.date {
+  flex: 1 1 0;
+
+  display: flex;
 }
-.details-rounds {
+.rounds {
 }
-.details-what {
-  float: right;
+.type {
+  text-align: right;
+  flex: 1 1 0;
 }
 
 .player-table {
+  margin: 0 1em 1em;
+
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
-  margin: 1em;
 }
 
-.tableSpacer {
-  width: 1em;
+.table-control-panel {
+  text-align: center;
+  width: 3em;
 }

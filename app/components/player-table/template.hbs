@@ -1,7 +1,4 @@
 <div local-class="table">
-  {{#unless reverse}}
-    {{fa-icon "arrow-down"}}
-  {{/unless}}
   {{#light-table playerTable as |t|}}
     {{t.head}}
 
@@ -24,7 +21,4 @@
       {{/if}}
     {{/t.body}}
   {{/light-table}}
-  {{#if reverse}}
-    {{fa-icon "arrow-down"}}
-  {{/if}}
 </div>
